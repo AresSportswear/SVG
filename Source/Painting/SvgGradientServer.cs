@@ -146,6 +146,7 @@ namespace Svg
             {
                 mergedOpacity = opacity * this.Stops[actualStops].Opacity;
                 position = (this.Stops[actualStops].Offset.ToDeviceValue(owner) / owner.Bounds.Width);
+                position = (float)Math.Round(position, 1, MidpointRounding.AwayFromZero);
                 colour = Color.FromArgb((int)(mergedOpacity * 255), this.Stops[actualStops++].Colour);
 
                 // Insert this colour before itself at position 0
